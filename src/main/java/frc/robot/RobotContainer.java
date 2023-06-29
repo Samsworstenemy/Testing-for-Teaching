@@ -5,8 +5,8 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
-import frc.robot.commands.MotorCommand;
-import frc.robot.subsystems.MotorSubsystem;
+import frc.robot.commands.DriveCommand;
+import frc.robot.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -19,7 +19,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final MotorSubsystem m_motorSubsystem = new MotorSubsystem();
+  private final DriveSubsystem m_motorSubsystem = new DriveSubsystem();
 
   // :> This is a lovely thing to do you should do it
 

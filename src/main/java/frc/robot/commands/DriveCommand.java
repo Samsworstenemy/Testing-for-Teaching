@@ -5,21 +5,21 @@
 package frc.robot.commands;
 
 import frc.robot.Constants;
-import frc.robot.subsystems.MotorSubsystem;
+import frc.robot.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
-public class MotorCommand extends CommandBase {
+public class DriveCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final MotorSubsystem m_subsystem;
+  private final DriveSubsystem m_subsystem;
   private final XboxController m_controller;
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public MotorCommand(MotorSubsystem subsystem, XboxController controller) {
+  public DriveCommand(DriveSubsystem subsystem, XboxController controller) {
     m_subsystem = subsystem;
     m_controller = controller;
     // Use addRequirements() here to declare subsystem dependencies.
@@ -33,9 +33,13 @@ public class MotorCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if (m_controller.getAButtonPressed()) {
-      m_subsystem.spinMotor(Constants.MotorValues.spinSpeed);
-    }
+
+    double ySpeed = m_controller.getLeftY() * Constants.DriveConstants.DriveMultiplier;
+    double xSpeed = m_controller.getLeftX() * Constants.DriveConstants.DriveMultiplier;
+    double zRotation = m_controller.getRightX() * Constants.DriveConstants.RotationMultiplier;
+  
+    m_subsystem.setDriveMotors(xSpeed, ySpeed, zRotation);
+
   }
 
   // Called once the command ends or is interrupted.
