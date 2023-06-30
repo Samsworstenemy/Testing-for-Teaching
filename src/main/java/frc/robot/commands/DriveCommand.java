@@ -35,7 +35,7 @@ public class DriveCommand extends CommandBase {
   public void execute() {
 
     double ySpeed = m_controller.getLeftY() * Constants.DriveConstants.DriveMultiplier;
-    double xSpeed = m_controller.getLeftX() * Constants.DriveConstants.DriveMultiplier;
+    double xSpeed = m_controller.getLeftX() * -Constants.DriveConstants.DriveMultiplier;
     double zRotation = m_controller.getRightX() * Constants.DriveConstants.RotationMultiplier;
   
     m_subsystem.setDriveMotors(xSpeed, ySpeed, zRotation);
