@@ -16,8 +16,16 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
-  public static class MotorValues {
-    public static final int funnymotorid = 2;
-    public static final double spinSpeed = .9;
+  public static class DriveConstants {
+    // :> Motor IDs
+    public static final int frontLeftMotorid = 4;
+    public static final int frontRightMotorid = 5;
+    public static final int backLeftMotorid = 3;
+    public static final int backRightMotorid = 2;
+    
+    //:> Speed Multiplier
+    public static final double DriveMultiplier = .5;
+    public static final double RotationMultiplier = .2;
+
   }
 }

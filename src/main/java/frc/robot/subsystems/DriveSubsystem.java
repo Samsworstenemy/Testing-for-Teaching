@@ -36,7 +36,7 @@ public class DriveSubsystem extends SubsystemBase {
   // :> Drive cartesian. This method is the meat and potatoes of driving the robot
   public void setDriveMotors(double xSpeed, double ySpeed, double zRotation) {
     // :> Directs the motors on how to move based off of the value we give it.
-    driveSpeeds.driveCartesian(xSpeed, ySpeed, zRotation);
+    driveSpeeds.driveCartesian(ySpeed, xSpeed, zRotation);
 
     // :> This can all be ignored this is my backup plan just in case things go wrong
 
