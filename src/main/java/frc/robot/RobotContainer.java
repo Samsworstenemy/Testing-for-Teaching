@@ -23,10 +23,6 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final DriveSubsystem m_motorSubsystem = new DriveSubsystem();
   private final DriveCommand m_DriveCommand = new DriveCommand(m_motorSubsystem, primaryController);
-  // :> This is a lovely thing to do you should do it
-
-  // Replace with CommandPS4Controller or CommandJoystick if needed
-
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
