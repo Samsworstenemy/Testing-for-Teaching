@@ -7,6 +7,7 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.MotorCommand;
 import frc.robot.subsystems.MotorSubsystem;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -18,20 +19,24 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  * subsystems, commands, and trigger mappings) should be declared here.
  */
 public class RobotContainer {
+
+  //:> Defines the controller we will be using
+  XboxController primaryController = new XboxController(0);
+
   // The robot's subsystems and commands are defined here...
+  // :> Creates the subsystems and commands in the robots eyes
   private final MotorSubsystem m_motorSubsystem = new MotorSubsystem();
-
-  // :> This is a lovely thing to do you should do it
-
-  // Replace with CommandPS4Controller or CommandJoystick if needed
-  private final CommandXboxController m_driverController =
-      new CommandXboxController(OperatorConstants.kDriverControllerPort);
+  private final MotorCommand m_motorCommand = new MotorCommand(m_motorSubsystem, primaryController);
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
+
+    //:> Sets the command we made as the default command that way it actually runs when we start the robot
+    m_motorSubsystem.setDefaultCommand(m_motorCommand);
+    
   }
 
   /**

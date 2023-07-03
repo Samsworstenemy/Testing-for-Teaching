@@ -12,15 +12,19 @@ import com.revrobotics.CANSparkMax;
 public class MotorSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public MotorSubsystem() {}
-
+  //:> This creates the motor we will be using to spin
   CANSparkMax funnyMotor = new CANSparkMax( Constants.MotorValues.funnymotorid, CANSparkMax.MotorType.kBrushless);
   
+  // :> Test method that I called just to see if things were working
   public void ping() {
     System.out.println("pong");
   }
+
+  // :> Creates the method with the logic inside to actually spin the motor
   public void spinMotor(double number) {
     funnyMotor.set(number);
   }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run

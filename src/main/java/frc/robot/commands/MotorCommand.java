@@ -33,7 +33,9 @@ public class MotorCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    // :> If statement that checks if the A button was pressed
     if (m_controller.getAButtonPressed()) {
+      // :> Calls the method we made in the subsystem and actually spins the motor.
       m_subsystem.spinMotor(Constants.MotorValues.spinSpeed);
     }
   }

@@ -17,7 +17,9 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
   }
   public static class MotorValues {
+    // :> Constant motor speeds and ids that we can use elsewhere
     public static final int funnymotorid = 2;
     public static final double spinSpeed = .9;
+
   }
 }
