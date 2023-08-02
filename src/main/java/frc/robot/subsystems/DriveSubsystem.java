@@ -36,6 +36,9 @@ public class DriveSubsystem extends SubsystemBase {
   private final SparkMaxPIDController backLeftPIDController;
   private final SparkMaxPIDController backRightPIDController;
   
+  private double xChange = 0.0;
+  private double yChange = 0.0;
+
   // :> Mec Drive Kinematics Objects that will be used to calculate wheel speeds and positions on the robot.
   MecanumDriveKinematics kinematics = new MecanumDriveKinematics(
   Constants.DriveConstants.frontLeftMeters, 

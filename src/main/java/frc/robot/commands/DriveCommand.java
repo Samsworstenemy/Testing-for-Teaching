@@ -44,7 +44,7 @@ public class DriveCommand extends CommandBase {
 
     // :> Corresponds the controllers joy sticks to the data being passed in to the driving functions
     double xSpeed = m_controller.getLeftX() * Constants.DriveConstants.DriveMultiplier;
-    double ySpeed = m_controller.getLeftY() * -Constants.DriveConstants.DriveMultiplier;
+    double ySpeed = m_controller.getLeftY() * Constants.DriveConstants.DriveMultiplier;
     double zRotation = m_controller.getRightX() * Constants.DriveConstants.RotationMultiplier;
   
     // :> Corresponds the data from the joy sticks to the actual wheel speeds

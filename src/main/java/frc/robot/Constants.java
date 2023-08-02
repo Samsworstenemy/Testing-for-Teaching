@@ -20,8 +20,11 @@ public final class Constants {
   }
   public static class PIDConstants {
     // :> Not real numbers should be changed later
-    public static double pGain = .5;
-    public static double iGain = .01;
+    // :> Update I think these are the correct ones but uh I have no way of truly verifying that.
+    /* Yeah it's either 1 or .17, you know really just fiddle around with it till it works.
+     */ 
+    public static double pGain = 1;
+    public static double iGain = 0;
     public static double dGain = 0;
   }
   public static class DriveConstants {
