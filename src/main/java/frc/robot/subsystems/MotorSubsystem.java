@@ -4,6 +4,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
@@ -15,6 +16,8 @@ public class MotorSubsystem extends SubsystemBase {
   //:> This creates the motor we will be using to spin
   CANSparkMax funnyMotor = new CANSparkMax( Constants.MotorValues.funnymotorid, CANSparkMax.MotorType.kBrushless);
   
+  public static Pose2d funnyPose;
+
   // :> Test method that I called just to see if things were working
   public void ping() {
     System.out.println("pong");

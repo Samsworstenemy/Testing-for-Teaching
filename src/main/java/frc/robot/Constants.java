@@ -22,4 +22,7 @@ public final class Constants {
     public static final double spinSpeed = .9;
 
   }
+  public static class Photonvision {
+    public static final String cameraName1 = "Forward_Global_Camera";
+  }
 }
